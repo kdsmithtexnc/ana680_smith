@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breast Cancer Classification</title>
+<style>
+	body {
+		background-color: lightpink;
+	}
+
+	h1{
+		text-align: center;
+	}
+	
+</style>				
+
+</head>
+
+<body>
+
+<h1> Breast Cancer Prediction </h1>
+
+<h2> Model Inputs</h2>
+
+    <form action="{{ url_for('predict')}}" method="POST">
+    Uniformity of Cell Size:  <input type="number" name="Uniformity_of_Cell_Size"><br>
+    Uniformity of Cell Shape:   <input type="number" name="Uniformity_of_Cell_Shape"><br>
+    Bare Nuclei:  <input type="number" name="Bare_Nuclei"><br>
+	      
+        <input type=submit value=Submit>
+   </form>
+
+<h2> Prediction (97% Accuracy & 98% & Sensitivity)</h2>
+
+    Malignant or Benign: {{ predict }}
+
+<p> ** 0 = Benign and 1 = Malignant </p>
+
+</body>
+</html>
